@@ -42,3 +42,16 @@ function isAnagram(s, t) {
 console.log(isAnagram("anagram", "nagaram")); // true
 console.log(isAnagram("rat", "car")); // false
 console.log(isAnagram("listen", "silent")); // true
+
+//first repeated character in a string
+function firstRepeatedCharacter(str) {
+    const count = {};
+    for (let char of str) {
+        if (count[char]) {
+            return char;
+        }
+        count[char] = 1;
+    }
+    return null; // No repeated character found
+}
+console.log(firstRepeatedCharacter("abca")); // a
