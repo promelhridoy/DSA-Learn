@@ -406,3 +406,85 @@
 // }
 // console.log(findFirstRepeating(numbers));
 
+
+
+//TODO: Two Pointers Pattern
+
+// function findPairWithTarget(arr, target) {
+
+//   arr.sort((a, b) => a -b)
+
+//   let left = 0;
+//   let right = arr.length - 1;
+
+//   while (left < right) {
+//     const sum = arr[left] + arr[right];
+
+//     if (sum === target) {
+//       return [arr[left], arr[right]]; 
+//     } 
+//     else if (sum < target) {
+//       left++;  
+//     } 
+//     else {
+//       right--;  
+//     }
+//   }
+
+//   return null;
+// }
+
+// const numbers = [11, 2, 4, 6, 8, 9, 10];
+// const target = 10;
+
+//? Remove Duplicates from Sorted Array
+
+function removeDuplicates(arr) {
+  let i = 0;
+
+for (let j = 1; j < arr.length; j++) {
+  if(arr[i] === arr[j]){
+    
+  }else if(arr[i] !== arr[j]) {
+    i++;
+   arr[i] = arr[j];
+  }
+}
+return arr.slice(0, i + 1);
+}
+
+const numbers = [1, 1, 2, 2, 3, 4, 4, 5];
+
+console.log(removeDuplicates(numbers));
+
+//? Move Zeroes 
+
+function moveZeroes(arr) {
+   let i = 0;
+
+for (let j = 0; j < arr.length; j++) {
+  if(arr[j] !== 0) {
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    i++
+  }
+}
+return arr;
+}
+
+//? Valid Palindrome
+
+function isPalindrome(str) {
+  let left = 0;
+  let right = str.length - 1;
+  while(left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+const str = "madam";
+console.log(isPalindrome(str));
+
