@@ -226,89 +226,183 @@
 // }
 
 
-function findSecondLargestNumber(arr) {
-  let largest = undefined;
-  let secondLargest = undefined;
+// function findSecondLargestNumber(arr) {
+//   let largest = undefined;
+//   let secondLargest = undefined;
 
-  for (let num of arr) {
-    if (largest === undefined || num > largest) {
-      secondLargest = largest;
-      largest = num;
-    } else if (
-      num !== largest &&
-      (secondLargest === undefined || num > secondLargest)
-    ) {
-      secondLargest = num;
-    }
-  }
+//   for (let num of arr) {
+//     if (largest === undefined || num > largest) {
+//       secondLargest = largest;
+//       largest = num;
+//     } else if (
+//       num !== largest &&
+//       (secondLargest === undefined || num > secondLargest)
+//     ) {
+//       secondLargest = num;
+//     }
+//   }
 
-  return secondLargest === undefined ? undefined : secondLargest;
-}
+//   return secondLargest === undefined ? undefined : secondLargest;
+// }
 
 
-console.log(findSecondLargestNumber([5, 5, 5]));
-console.log(findSecondLargestNumber([10]));
-console.log(findSecondLargestNumber([-10, -5, -20]));
-console.log(findSecondLargestNumber([]));
+// console.log(findSecondLargestNumber([5, 5, 5]));
+// console.log(findSecondLargestNumber([10]));
+// console.log(findSecondLargestNumber([-10, -5, -20]));
+// console.log(findSecondLargestNumber([]));
 
-//* Frequency Counter Pattern
+// //* Frequency Counter Pattern
 
-function frequencyCounter(arr) {
-  const frequency = {};
+// function frequencyCounter(arr) {
+//   const frequency = {};
 
-  for(let num of arr) {
-    if(frequency[num]) {
-       frequency[num]++;
-    }else {
-      frequency[num] = 1;
-    }
-  }
-  return frequency;
-}
+//   for(let num of arr) {
+//     if(frequency[num]) {
+//        frequency[num]++;
+//     }else {
+//       frequency[num] = 1;
+//     }
+//   }
+//   return frequency;
+// }
 
-function countFrequency(arr) {
-  const frequency = new Map();
+// function countFrequency(arr) {
+//   const frequency = new Map();
 
-  for (const num of arr) {
-    if (frequency.has(num)) {
-      frequency.set(num, frequency.get(num) + 1);
-    } else {
-      frequency.set(num, 1);
-    }
-  }
+//   for (const num of arr) {
+//     if (frequency.has(num)) {
+//       frequency.set(num, frequency.get(num) + 1);
+//     } else {
+//       frequency.set(num, 1);
+//     }
+//   }
 
-  return frequency;
-}
+//   return frequency;
+// }
 
-function findMostFrequentNumber(arr) {
-  const frequency = {};
-  let mostFrequency = 0;
-  let mostFrequentNumber = undefined;
-  for(let num of arr) {
-    if(frequency[num]) {
-       frequency[num]++;
-    }else {
-      frequency[num] = 1;
-    }
-  }
-for (let num in frequency) {
-  if (frequency[num] > mostFrequency) {
-    mostFrequency = frequency[num];
-    mostFrequentNumber = Number(num);
-  }
-}
-  return mostFrequentNumber;
-}
+// function findMostFrequentNumber(arr) {
+//   const frequency = {};
+//   let mostFrequency = 0;
+//   let mostFrequentNumber = undefined;
+//   for(let num of arr) {
+//     if(frequency[num]) {
+//        frequency[num]++;
+//     }else {
+//       frequency[num] = 1;
+//     }
+//   }
+// for (let num in frequency) {
+//   if (frequency[num] > mostFrequency) {
+//     mostFrequency = frequency[num];
+//     mostFrequentNumber = Number(num);
+//   }
+// }
+//   return mostFrequentNumber;
+// }
 
-function hasDuplicate(arr) {
-   const frequency = {};
-   for(let num of arr) {
-    if(frequency[num]) {
-      return true;
-    }else {
-      frequency[num] = 1;
-    }
-   }
-   return false;
-}
+// function hasDuplicate(arr) {
+//    const frequency = {};
+//    for(let num of arr) {
+//     if(frequency[num]) {
+//       return true;
+//     }else {
+//       frequency[num] = 1;
+//     }
+//    }
+//    return false;
+// }
+
+// Frequency Pattern
+
+// function sameFrequency(arr1, arr2) {
+//   if(arr1.length !== arr2.length) return false;
+  
+//    const frequency = new Map();
+   
+//    for (const num of arr1) {
+//     if (frequency.has(num)) {
+//       frequency.set(num, frequency.get(num) + 1);
+//     } else {
+//       frequency.set(num, 1);
+//     }
+//   }
+
+//   for (const num of arr2) {
+//     if (frequency.has(num)) {
+//       if(frequency.get(num) > 0) {
+//         frequency.set(num, frequency.get(num) - 1);
+//       }else {
+//         return false;
+//       }
+//     } else {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function sameFrequency(arr1, arr2) {
+//   if(arr1.length !== arr2.length) return false;
+  
+//    const frequency = new Map();
+   
+//    for (const num of arr1) {
+//     if (frequency.has(num)) {
+//       frequency.set(num, frequency.get(num) + 1);
+//     } else {
+//       frequency.set(num, 1);
+//     }
+//   }
+
+//   for (const num of arr2) {
+//   const count = frequency.get(num);
+
+//   if (!count) return false;
+
+//   frequency.set(num, count - 1);
+// }
+//   return true;
+// }
+
+// console.log(sameFrequency([1, 2, 2, 3], [2, 1, 3, 2]));
+// console.log(sameFrequency([1, 2, 2, 3], [1, 2, 3, 3]));
+// console.log(sameFrequency([1, 2, 3], [1, 2]));
+// console.log(sameFrequency([], []));
+
+
+// function findFirstNonRepeating(arr) {
+//   const frequency = new Map();
+   
+//    for (const num of arr) {
+//     if (frequency.has(num)) {
+//       frequency.set(num, frequency.get(num) + 1);
+//     } else {
+//       frequency.set(num, 1);
+//     }
+//   }
+
+//   for(let [key, value] of frequency) {
+//     if(value === 1) {
+//       return key;
+//     }
+//   }
+
+// }
+
+// const numbers = [4, 5, 1, 2, 1, 4, 5];
+
+// console.log(findFirstNonRepeating(numbers));
+
+// function findFirstRepeating(arr) {
+//   const frequency = new Map();
+
+//      for (const num of arr) {
+//     if (frequency.has(num)) {
+//       return num;
+//     } else {
+//       frequency.set(num, 1);
+//     }
+//   }
+// }
+// console.log(findFirstRepeating(numbers));
 
